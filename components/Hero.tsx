@@ -1,17 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 
 export default function Hero() {
-  const [clickedCount, setClickedCount] = useState(0);
-
-  const handlePlaceholderClick = () => {
-    setClickedCount((prev) => prev + 1);
-    alert(
-      `🎉 축하합니다! 버튼 클릭 동작이 성공적으로 실행되었습니다.\n(현재 클릭 횟수: ${clickedCount + 1}회)\n\n이 버튼은 선생님들의 멋진 아이디어로 채워질 공간입니다. 'components/Hero.tsx' 파일을 열어 이 함수(handlePlaceholderClick)를 수정하면 원하는 동작을 바로 코딩할 수 있어요!`
-    );
-  };
 
   return (
     <section className="relative flex flex-col items-center justify-center overflow-hidden py-20 px-6 sm:px-8 lg:py-32">
@@ -37,8 +29,7 @@ export default function Hero() {
         </p>
 
         {/* CTA 버튼 영역 */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          {/* 메인: 좌표평면 탐구 시작 버튼 */}
+        <div className="mt-10 flex items-center justify-center">
           <Link
             href="/graph"
             className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 px-8 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 hover:from-indigo-400 hover:to-violet-500 hover:shadow-indigo-500/40 hover:scale-105 transition-all cursor-pointer"
@@ -46,15 +37,6 @@ export default function Hero() {
             <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
             📊 좌표평면 탐구 시작하기
           </Link>
-
-          {/* 서브: 기존 플레이스홀더 버튼 */}
-          <button
-            onClick={handlePlaceholderClick}
-            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-slate-950 px-8 text-sm font-semibold text-white border border-indigo-500/50 shadow-[0_0_15px_rgba(99,102,241,0.15)] hover:border-indigo-400 hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-all cursor-pointer"
-          >
-            <span className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-            🚀 기능 추가 버튼 (클릭해 보세요!)
-          </button>
         </div>
 
         {/* 선생님들을 위한 코딩 가이드 안내 카드 */}
