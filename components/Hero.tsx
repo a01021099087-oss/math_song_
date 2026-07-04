@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 export default function Hero() {
   const [clickedCount, setClickedCount] = useState(0);
@@ -35,8 +36,18 @@ export default function Hero() {
           바로 활용할 수 있는 나만의 교육 도구를 만들기 위한 가장 단순하고 직관적인 시작 프로그램입니다.
         </p>
 
-        {/* 기능 추가를 위한 가짜(Placeholder) 버튼 */}
+        {/* CTA 버튼 영역 */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* 메인: 좌표평면 탐구 시작 버튼 */}
+          <Link
+            href="/graph"
+            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 px-8 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 hover:from-indigo-400 hover:to-violet-500 hover:shadow-indigo-500/40 hover:scale-105 transition-all cursor-pointer"
+          >
+            <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            📊 좌표평면 탐구 시작하기
+          </Link>
+
+          {/* 서브: 기존 플레이스홀더 버튼 */}
           <button
             onClick={handlePlaceholderClick}
             className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-slate-950 px-8 text-sm font-semibold text-white border border-indigo-500/50 shadow-[0_0_15px_rgba(99,102,241,0.15)] hover:border-indigo-400 hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-all cursor-pointer"
